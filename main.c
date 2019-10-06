@@ -19,11 +19,7 @@ int  main()
 	int C;
 
 	FILE *F=NULL;
-	F=fopen("gestion_du_personnel_A.txt","w+");
-	if(F==NULL){
-		printf("fichier ne souvre pas\n");
-		return 1;
-	}
+	
 	int choix;
 	do{
 		choix=menu();
@@ -35,6 +31,12 @@ int  main()
 			Personnel[nbre_P].nbrS=0;
 			Personnel[nbre_P].nbrFCnge=0;
 			nbre_P++;
+			F=fopen("gestion_du_personnel_A.txt","a+");
+			if(F==NULL){
+				printf("fichier ne souvre pas\n");
+				return 1;
+			}
+			
 			fprintf(F, "%s \n",Personnel[nbre_P].nom );
 			fclose(F);
 			
