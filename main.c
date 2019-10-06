@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include<string.h>
 #include<conio.h>
+
 #include "administration.h"
+
 #include "personnel.h"
 
 int nbre_P=0;
@@ -25,8 +27,7 @@ int  main()
 	int choix;
 	do{
 		choix=menu();
-		fprintf(F, "bon \n" );
-	
+		
 		if(choix==1)
 		{
 			Personnel[nbre_P]=enregistrementP();
@@ -34,6 +35,8 @@ int  main()
 			Personnel[nbre_P].nbrS=0;
 			Personnel[nbre_P].nbrFCnge=0;
 			nbre_P++;
+			fprintf(F, "%s \n",Personnel[nbre_P].nom );
+			fclose(F);
 			
 		}
 		else if (choix==2)
@@ -93,13 +96,10 @@ int  main()
 		{
 			
 		}
-		printf("VOULEZ VOUS CONTINUER\n");
+		printf("VOULEZ VOUS CONTINUER\n1-oui\n2-non\n");
 		scanf("%d",&C);
 	}while(C==1);
 	
-	
-	
-	fclose(F);
 	getch();
 	return 0;
 }
