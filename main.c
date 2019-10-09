@@ -48,12 +48,24 @@ int  main()
 					Personnel[r].Conge[Personnel[r].nbrFCnge]=Rconge();
 					system("CLS");
 					printf("LISTE DES CONGES \n");
-					afficheConge();
+
+					for (size_t i = 0; i <=Personnel[r].nbrFCnge ; i++) {
+							printf("Date de depart : %d-%d-%d\n", Personnel[r].Conge[i].dateD.jour,Personnel[r].Conge[i].dateD.mois,Personnel[r].Conge[i].dateD.annee );
+							printf("Date de retour : %d-%d-%d\n",Personnel[r].Conge[i].dateF.jour,Personnel[r].Conge[i].dateF.mois,Personnel[r].Conge[i].dateF.annee );
+							printf("Motif :%s\n",Personnel[r].Conge[i].motif );
+							printf("_______________________________________________________\n");
+						}
 					Personnel[r].nbrFCnge++;
 				}
 				else{
 					printf("LISTE DES CONGES \n");
-					afficheConge();
+
+					for (size_t i = 0; i <=Personnel[r].nbrFCnge ; i++) {
+							printf("Date de depart : %d-%d-%d\n", Personnel[r].Conge[i].dateD.jour,Personnel[r].Conge[i].dateD.mois,Personnel[r].Conge[i].dateD.annee );
+							printf("Date de retour : %d-%d-%d\n",Personnel[r].Conge[i].dateF.jour,Personnel[r].Conge[i].dateF.mois,Personnel[r].Conge[i].dateF.annee );
+							printf("Motif :%s\n",Personnel[r].Conge[i].motif );
+							printf("_______________________________________________________\n");
+						}
 					printf("nombre de conges maxi atteint \n");
 				}
 			}
@@ -68,13 +80,23 @@ int  main()
 				if(Personnel[r].nbrS<3){
 					Personnel[r].Sanction[Personnel[r].nbrS]=Rsanction();
 					printf("\tLISTE DES SANCTIONS \n");
-					afficheSanction();
+					for (size_t i = 0; i <= Personnel[r].nbrS; i++) {
+						printf("Date de depart : %d-%d-%d\n", Personnel[r].Sanction[i].dateD.jour,Personnel[r].Sanction[i].dateD.mois,Personnel[r].Sanction[i].dateD.annee );
+						printf("Date de retour : %d-%d-%d\n",Personnel[r].Sanction[i].dateF.jour,Personnel[r].Sanction[i].dateF.mois,Personnel[r].Sanction[i].dateF.annee );
+						printf("Motif :%s\n",Personnel[r].Sanction[i].motif );
+						printf("_______________________________________________________\n");
+					}
 					Personnel[r].nbrS++;
 				}
 				else
 				{
 					printf("\tLISTE DES SANCTIONS \n");
-					afficheSanction();
+					for (size_t i = 0; i <= Personnel[r].nbrS; i++) {
+						printf("Date de depart : %d-%d-%d\n", Personnel[r].Sanction[i].dateD.jour,Personnel[r].Sanction[i].dateD.mois,Personnel[r].Sanction[i].dateD.annee );
+						printf("Date de retour : %d-%d-%d\n",Personnel[r].Sanction[i].dateF.jour,Personnel[r].Sanction[i].dateF.mois,Personnel[r].Sanction[i].dateF.annee );
+						printf("Motif :%s\n",Personnel[r].Sanction[i].motif );
+						printf("_______________________________________________________\n");
+					}
 					printf("vous avez atteint le nombre maxi de sanction par consequent vous etes renvoyer \n");
 				}
 			}

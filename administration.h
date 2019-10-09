@@ -3,6 +3,7 @@
 
 #include "date.h"
 
+
 #define A_c 2019
 
 struct conge
@@ -26,8 +27,6 @@ typedef struct conge conge;
 typedef struct sanction sanction;
 conge Rconge();
 sanction Rsanction();
-void afficheConge();
-void afficheSanction();
 
 
 #endif
