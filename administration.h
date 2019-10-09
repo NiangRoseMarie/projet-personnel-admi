@@ -26,6 +26,8 @@ typedef struct conge conge;
 typedef struct sanction sanction;
 conge Rconge();
 sanction Rsanction();
+void afficheConge();
+void afficheSanction();
 
 
 #endif

@@ -25,7 +25,7 @@ typedef struct personnel personnel;
 
 personnel enregistrementP();
 void modificationP(personnel *P,personnel personne,int position);
-void suppressionP(personnel *P,int position, int n );
+void suppressionP(personnel *P,int position);
 void afficherP(personnel *P,int position);
 int rechercheP(personnel *P, int n );
 void listAfficherP(personnel *P, int n );

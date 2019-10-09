@@ -8,7 +8,8 @@
 
 personnel enregistrementP()
 {
-
+	int r ;
+	do{
 	personnel P;
 	printf("Nom :\n");
 	scanf("%s",P.nom);
@@ -32,12 +33,16 @@ personnel enregistrementP()
 		printf("\n6-secretaire\n7-directeur\n8-chauffeur\n");
 		scanf("%d",&P.fonction);
 	}while(P.fonction<0 || P.fonction>8);
-	
+
 	printf("Date de venue :\n");
 	P.dateV=Date();
 	P.dateV.annee=A_c;
 
+	printf("Etes vous sur des informations rentrees?\n1-oui\n2-non\n");
+	scanf("%d",&r );
 	return P;
+	}while (r==2);
+
 
 }
 
@@ -75,12 +80,36 @@ void afficherP(personnel * P,int position)
 		printf("Fonctioon :chauffeur ");
 }
 
-void suppressionP(personnel *P,int position, int n )
+void suppressionP(personnel *P,int position)
 {
 	personnel sp;
-	sp=P[n];
-	P[n]=P[position];
+	///////////////
+	strcpy(sp.nom,P[100].nom);
+	strcpy(sp.prenom,P[100].prenom);
+	strcpy(sp.contact,P[100].contact);
+	sp.fonction=P[100].fonction;
+	strcpy(sp.habitation,P[100].habitation);
+	sp.dateAnniv=P[100].dateAnniv;
+	sp.dateV=P[100].dateV;
+//////////////////////////////////
+	strcpy(P[100].nom,P[100].nom);
+	strcpy(P[100].prenom,P[100].prenom);
+	strcpy(P[100].contact,P[100].contact);
+	P[100].fonction=P[100].fonction;
+	strcpy(P[100].habitation,P[100].habitation);
+	P[100].dateAnniv=P[100].dateAnniv;
+	P[100].dateV=P[100].dateV;
+//////////////////////////////////
+	strcpy(P[position].nom,sp.nom);
+	strcpy(P[position].prenom,sp.prenom);
+	strcpy(P[position].contact,sp.contact);
+	P[position].fonction=sp.fonction;
+	strcpy(P[position].habitation,sp.habitation);
+	P[position].dateAnniv=sp.dateAnniv;
+	P[position].dateV=sp.dateV;
+
 	P=realloc(P,99);
+	P=realloc(P,100);
 
 }
 int rechercheP(personnel *P, int n)
@@ -88,7 +117,7 @@ int rechercheP(personnel *P, int n)
 	char code [7];
 	printf("entrer votre contact\n");
 	scanf("%s",code);
-	for(int i=0;i=n;i++)
+	for(int i=0;i<n;i++)
 	{
 		if(strcmp(P[i].contact,code)==0)
 		{
@@ -126,4 +155,3 @@ void listAfficherP(personnel *P, int n)
 		printf("___________________________________________________________________\n");
 	}
 }
-
