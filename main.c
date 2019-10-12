@@ -7,9 +7,6 @@
 
 #include "personnel.h"
 
-//#include "b.h"
-
-
 int nbre_P=0;
 
 int menu();
@@ -142,6 +139,8 @@ int  main()
 		else if (choix==8)
 		{
 				r=rechercheP(Personnel, nbre_P);
+				if (r==-1)
+					printf("Pas retrouve\n");
 				suppressionP(Personnel,r);
 				system("CLS");
 				printf("Personnel supprime \n");
@@ -165,5 +164,6 @@ int menu()
 		printf("1-enregistrement personnel\n2-gestion des conges\n3-gestion des sanctions\n4-afficher une personne");
 		printf("\n5-afficher la liste du personnel\n6-modifier une personne\n7-rechercher une personne\n8-supprimer un personnel\n");
 		scanf("%d",&C);
+		return C;
 	}while(C<0 || C>8);
 }

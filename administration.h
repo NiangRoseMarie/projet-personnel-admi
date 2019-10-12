@@ -11,19 +11,15 @@ struct conge
 	char motif[256];
 	date dateD;
 	date dateF;
-	int nbrFCnge;
-
 };
+typedef struct conge conge;
 struct sanction
 {
 	char motif[256];
-	int nbrS;
 	int verdicte;
 	date dateD;
 	date dateF;
 };
-
-typedef struct conge conge;
 typedef struct sanction sanction;
 conge Rconge();
 sanction Rsanction();

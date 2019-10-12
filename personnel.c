@@ -3,6 +3,7 @@
 #include<string.h>
 
 #include "date.h"
+
 #include "personnel.h"
 
 
@@ -83,7 +84,6 @@ void afficherP(personnel * P,int position)
 void suppressionP(personnel *P,int position)
 {
 	personnel sp;
-	///////////////
 	strcpy(sp.nom,P[100].nom);
 	strcpy(sp.prenom,P[100].prenom);
 	strcpy(sp.contact,P[100].contact);
@@ -91,7 +91,7 @@ void suppressionP(personnel *P,int position)
 	strcpy(sp.habitation,P[100].habitation);
 	sp.dateAnniv=P[100].dateAnniv;
 	sp.dateV=P[100].dateV;
-//////////////////////////////////
+	////
 	strcpy(P[100].nom,P[100].nom);
 	strcpy(P[100].prenom,P[100].prenom);
 	strcpy(P[100].contact,P[100].contact);
@@ -99,7 +99,7 @@ void suppressionP(personnel *P,int position)
 	strcpy(P[100].habitation,P[100].habitation);
 	P[100].dateAnniv=P[100].dateAnniv;
 	P[100].dateV=P[100].dateV;
-//////////////////////////////////
+	//////
 	strcpy(P[position].nom,sp.nom);
 	strcpy(P[position].prenom,sp.prenom);
 	strcpy(P[position].contact,sp.contact);
@@ -107,10 +107,8 @@ void suppressionP(personnel *P,int position)
 	strcpy(P[position].habitation,sp.habitation);
 	P[position].dateAnniv=sp.dateAnniv;
 	P[position].dateV=sp.dateV;
-
 	P=realloc(P,99);
 	P=realloc(P,100);
-
 }
 int rechercheP(personnel *P, int n)
 {
