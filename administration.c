@@ -49,16 +49,6 @@ sanction Rsanction()
 			scanf("%d",&S.dateF.annee);
 		}while(S.dateF.annee<A_c);
 	}
-	if(C==1)
-	{
-		if(S.nbrS>3)
-		{
-			printf("personnel renvoye\n");
-			//supprime;
-		}
-		else
-			printf("le personnel ne peut pas etre renvoyer\n");
-	}
 
 
 	return S;
